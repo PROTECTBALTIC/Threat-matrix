@@ -947,7 +947,8 @@ function normalizeLabel(s) {
   const dirFilter = { direct: true, indirect: true, both: true };
   const strFilter = { weak: true, medium: true, strong: true, na: true };
   const isDirEnabled = (d) => {
-    const k = (d || '').toString().trim().toLowerCase();
+    const k = (d || '').toString().trim().replace(/finfish mariculture\s*\(aquaculture\)/gi,'finfish mariculture')
+    .toLowerCase();
     return k && Object.prototype.hasOwnProperty.call(dirFilter, k) ? !!dirFilter[k] : true;
   };
   const isStrEnabled = (s) => {
@@ -1092,7 +1093,7 @@ Aquaculture	Aquaculture - fresh water	Coastal and river input of hazardous subst
 Aquaculture	Shellfish mariculture	Other forms of litter	Input of litter
 Aquaculture	Algae cultivation	Sealing	Physical loss
 Aquaculture	Algae cultivation	Siltation	Physical disturbance
-Waste treatment and disposal	Industrial waste water treatment	Siltation	Physical disturbance
+Waste treatment and disposal	Industrial wastewater treatment	Siltation	Physical disturbance
 Forestry	Forestry	Change of habitat location, size and/or quality	Disturbance of species
 Forestry	Forestry	Coastal and river input of hazardous substances	Input of hazardous substances
 Forestry	Forestry	Riverine and coastal diffuse input of nutrients	Input of nutrients
@@ -1178,14 +1179,14 @@ Fish and shellfish harvesting (professional, recreational)	Benthic trawling	Inpu
 Fish and shellfish harvesting (professional, recreational)	Benthic trawling	Input of organic matter	Input of organic matter
 Fish and shellfish harvesting (professional, recreational)	Benthic trawling	Extraction	Physical loss
 Fish and shellfish harvesting (professional, recreational)	Benthic trawling	Other forms of litter	Input of litter
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Continuous underwater noise	Input of sound
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Intentional extraction or injury to species	Extraction or injury to species
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Abrasion	Physical disturbance
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Other disturbance to species	Disturbance of species
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Non-intentional extraction or injury to species (including bycatch)	Extraction or injury to species
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Input of climate change gases	Input of hazardous substances
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Input of organic matter	Input of organic matter
-Fish and shellfish harvesting (professional, recreational)	Demersal long lining	Other forms of litter	Input of litter
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Continuous underwater noise	Input of sound
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Intentional extraction or injury to species	Extraction or injury to species
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Abrasion	Physical disturbance
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Other disturbance to species	Disturbance of species
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Non-intentional extraction or injury to species (including bycatch)	Extraction or injury to species
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Input of climate change gases	Input of hazardous substances
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Input of organic matter	Input of organic matter
+Fish and shellfish harvesting (professional, recreational)	Demersal longlining	Other forms of litter	Input of litter
 Fish and shellfish harvesting (professional, recreational)	Fishery with coastal stationary gear	Abrasion	Physical disturbance
 Fish and shellfish harvesting (professional, recreational)	Fishery with coastal stationary gear	Continuous underwater noise	Input of sound
 Fish and shellfish harvesting (professional, recreational)	Fishery with coastal stationary gear	Intentional extraction or injury to species	Extraction or injury to species
@@ -1220,13 +1221,13 @@ Fish and shellfish harvesting (professional, recreational)	Netting	Input of orga
 Fish and shellfish harvesting (professional, recreational)	Netting	Intentional extraction or injury to species	Extraction or injury to species
 Fish and shellfish harvesting (professional, recreational)	Netting	Non-intentional extraction or injury to species (including bycatch)	Extraction or injury to species
 Fish and shellfish harvesting (professional, recreational)	Netting	Other forms of litter	Input of litter
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Continuous underwater noise	Input of sound
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Other disturbance to species	Disturbance of species
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Input of climate change gases	Input of hazardous substances
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Input of organic matter	Input of organic matter
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Intentional extraction or injury to species	Extraction or injury to species
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Non-intentional extraction or injury to species (including bycatch)	Extraction or injury to species
-Fish and shellfish harvesting (professional, recreational)	Pelagic long lining	Other forms of litter	Input of litter
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Continuous underwater noise	Input of sound
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Other disturbance to species	Disturbance of species
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Input of climate change gases	Input of hazardous substances
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Input of organic matter	Input of organic matter
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Intentional extraction or injury to species	Extraction or injury to species
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Non-intentional extraction or injury to species (including bycatch)	Extraction or injury to species
+Fish and shellfish harvesting (professional, recreational)	Pelagic longlining	Other forms of litter	Input of litter
 Fish and shellfish harvesting (professional, recreational)	Pelagic seining	Continuous underwater noise	Input of sound
 Fish and shellfish harvesting (professional, recreational)	Pelagic seining	Other disturbance to species	Disturbance of species
 Fish and shellfish harvesting (professional, recreational)	Pelagic seining	Input of organic matter	Input of organic matter
@@ -1541,36 +1542,36 @@ Industrial uses	Oil and gas refineries; Industrial plants	Oxygen changes	Changes
 Industrial uses	Oil and gas refineries; Industrial plants	Other forms of litter	Input of litter (solid waste matter, including micro-size litter)
 Waste treatment and disposal	Carbon capture and storage (Carbon sequestration)	Abrasion	Physical disturbance
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Beach litter	Input of litter
-Waste treatment and disposal	Urban waste water treatment	Coastal and river input of hazardous substances	Input of hazardous substances
-Waste treatment and disposal	Industrial waste water treatment	Coastal and river input of hazardous substances	Input of hazardous substances
+Waste treatment and disposal	Urban wastewater treatment	Coastal and river input of hazardous substances	Input of hazardous substances
+Waste treatment and disposal	Industrial wastewater treatment	Coastal and river input of hazardous substances	Input of hazardous substances
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Coastal and river input of hazardous substances	Input of hazardous substances
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Input of climate change gases	Input of hazardous substances
-Waste treatment and disposal	Urban waste water treatment	Change in water temperature	Input of other forms of energy
-Waste treatment and disposal	Industrial waste water treatment	Change in water temperature	Input of other forms of energy
-Waste treatment and disposal	Urban waste water treatment	Input of climate change gases	Input of hazardous substances
-Waste treatment and disposal	Industrial waste water treatment	Input of climate change gases	Input of hazardous substances
+Waste treatment and disposal	Urban wastewater treatment	Change in water temperature	Input of other forms of energy
+Waste treatment and disposal	Industrial wastewater treatment	Change in water temperature	Input of other forms of energy
+Waste treatment and disposal	Urban wastewater treatment	Input of climate change gases	Input of hazardous substances
+Waste treatment and disposal	Industrial wastewater treatment	Input of climate change gases	Input of hazardous substances
 Waste treatment and disposal	Carbon capture and storage (Carbon sequestration)	Input of climate change gases	Input of hazardous substances
 Waste treatment and disposal	Carbon capture and storage (Carbon sequestration)	Impulsive noise	Input of sound
 Waste treatment and disposal	Carbon capture and storage (Carbon sequestration)	Hazardous substances input at sea	Input of hazardous substances
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Input of organic matter	Input of organic matter
-Waste treatment and disposal	Urban waste water treatment	Riverine and coastal diffuse input of nutrients	Input of nutrients
-Waste treatment and disposal	Industrial waste water treatment	Input of microbial pathogens	Input or introduction of biological material
-Waste treatment and disposal	Urban waste water treatment	Input of microbial pathogens	Input or introduction of biological material
-Waste treatment and disposal	Urban waste water treatment	Input of organic matter	Input of organic matter
+Waste treatment and disposal	Urban wastewater treatment	Riverine and coastal diffuse input of nutrients	Input of nutrients
+Waste treatment and disposal	Industrial wastewater treatment	Input of microbial pathogens	Input or introduction of biological material
+Waste treatment and disposal	Urban wastewater treatment	Input of microbial pathogens	Input or introduction of biological material
+Waste treatment and disposal	Urban wastewater treatment	Input of organic matter	Input of organic matter
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Other forms of litter	Input of litter
-Waste treatment and disposal	Industrial waste water treatment	Riverine and coastal diffuse input of nutrients	Input of nutrients
+Waste treatment and disposal	Industrial wastewater treatment	Riverine and coastal diffuse input of nutrients	Input of nutrients
 Waste treatment and disposal	Solid waste disposal (e.g. landfills)	Riverine and coastal diffuse input of nutrients	Input of nutrients
-Waste treatment and disposal	Industrial waste water treatment	Input of organic matter	Input of organic matter
-Waste treatment and disposal	Urban waste water treatment	Other changes to hydrological conditions	Changes to hydrological conditions
-Waste treatment and disposal	Industrial waste water treatment	Other changes to hydrological conditions	Changes to hydrological conditions
-Waste treatment and disposal	Urban waste water treatment	Oxygen changes	Changes to hydrological conditions
-Waste treatment and disposal	Industrial waste water treatment	Oxygen changes	Changes to hydrological conditions
-Waste treatment and disposal	Urban waste water treatment	Other disturbance to species	Disturbance of species
+Waste treatment and disposal	Industrial wastewater treatment	Input of organic matter	Input of organic matter
+Waste treatment and disposal	Urban wastewater treatment	Other changes to hydrological conditions	Changes to hydrological conditions
+Waste treatment and disposal	Industrial wastewater treatment	Other changes to hydrological conditions	Changes to hydrological conditions
+Waste treatment and disposal	Urban wastewater treatment	Oxygen changes	Changes to hydrological conditions
+Waste treatment and disposal	Industrial wastewater treatment	Oxygen changes	Changes to hydrological conditions
+Waste treatment and disposal	Urban wastewater treatment	Other disturbance to species	Disturbance of species
 Waste treatment and disposal	Carbon capture and storage (Carbon sequestration)	Sealing	Physical loss
-Waste treatment and disposal	Industrial waste water treatment	Other disturbance to species	Disturbance of species
-Waste treatment and disposal	Urban waste water treatment	Salinity changes	Changes to hydrological conditions
-Waste treatment and disposal	Industrial waste water treatment	Salinity changes	Changes to hydrological conditions
-Waste treatment and disposal	Urban waste water treatment	Siltation	Physical disturbance
+Waste treatment and disposal	Industrial wastewater treatment	Other disturbance to species	Disturbance of species
+Waste treatment and disposal	Urban wastewater treatment	Salinity changes	Changes to hydrological conditions
+Waste treatment and disposal	Industrial wastewater treatment	Salinity changes	Changes to hydrological conditions
+Waste treatment and disposal	Urban wastewater treatment	Siltation	Physical disturbance
 Tourism and leisure infrastructure	Marinas and leisure harbours	Coastal and marine point source input of nutrients	Input of nutrients
 Tourism and leisure infrastructure	Piers	Continuous underwater noise	Input of sound
 Tourism and leisure infrastructure	Marinas and leisure harbours	Input of organic matter	Input of organic matter
@@ -1699,6 +1700,7 @@ Research and survey	Environmental monitoring stations	Intentional extraction or 
       if (cols.length < 4) continue;
       let act2 = (cols[idx.act2]||'').trim();
       let act3 = (cols[idx.act3]||'').trim();
+      act3 = act3.replace(/finfish mariculture\s*\(aquaculture\)/ig,'Finfish mariculture');
       let pres2 = (cols[idx.pres2]||'').trim();
       let pres3 = (cols[idx.pres3]||'').trim();
 
@@ -2257,14 +2259,14 @@ let selectedPressures  = new Set();
   ['decommission of wind turbines||other disturbance to species||disturbance of species',{d:'direct',s:'strong'}],
   ['decommission of wind turbines||sealing||physical loss',{d:'direct',s:'strong'}],
   ['decommission of wind turbines||smothering||physical disturbance',{d:'direct',s:'strong'}],
-  ['demersal long lining||abrasion||physical disturbance',{d:'direct',s:'weak'}],
-  ['demersal long lining||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
-  ['demersal long lining||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
-  ['demersal long lining||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
-  ['demersal long lining||intentional extraction or injury to species||extraction or injury to species',{d:'direct',s:'strong'}],
-  ['demersal long lining||non-intentional extraction or injury to species (including bycatch)||extraction or injury to species',{d:'direct',s:'strong'}],
-  ['demersal long lining||other disturbance to species||disturbance of species',{d:'direct',s:'strong'}],
-  ['demersal long lining||other forms of litter||input of litter',{d:'both',s:'medium'}],
+  ['demersal longlining||abrasion||physical disturbance',{d:'direct',s:'weak'}],
+  ['demersal longlining||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
+  ['demersal longlining||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
+  ['demersal longlining||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
+  ['demersal longlining||intentional extraction or injury to species||extraction or injury to species',{d:'direct',s:'strong'}],
+  ['demersal longlining||non-intentional extraction or injury to species (including bycatch)||extraction or injury to species',{d:'direct',s:'strong'}],
+  ['demersal longlining||other disturbance to species||disturbance of species',{d:'direct',s:'strong'}],
+  ['demersal longlining||other forms of litter||input of litter',{d:'both',s:'medium'}],
   ['depositing dredged material||coastal and marine point source input of nutrients||input of nutrients',{d:'both',s:'weak'}],
   ['depositing dredged material||hazardous substances input at sea||input of hazardous substances',{d:'both',s:'strong'}],
   ['depositing dredged material||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
@@ -2409,17 +2411,17 @@ let selectedPressures  = new Set();
   ['industrial and ferry ports||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
   ['industrial and ferry ports||oxygen changes||changes to hydrological conditions',{d:'both',s:'weak'}],
   ['industrial and ferry ports||salinity changes||changes to hydrological conditions',{d:'both',s:'weak'}],
-  ['industrial waste water treatment||change in water temperature||input of other forms of energy',{d:'both',s:'medium'}],
-  ['industrial waste water treatment||coastal and river input of hazardous substances||input of hazardous substances',{d:'both',s:'medium'}],
-  ['industrial waste water treatment||input of climate change gases||input of hazardous substances',{d:'both',s:'medium'}],
-  ['industrial waste water treatment||input of microbial pathogens||input or introduction of biological material',{d:'both',s:'strong'}],
-  ['industrial waste water treatment||input of organic matter||input of organic matter',{d:'both',s:'strong'}],
-  ['industrial waste water treatment||other changes to hydrological conditions||changes to hydrological conditions',{d:'both',s:'weak'}],
-  ['industrial waste water treatment||other disturbance to species||disturbance of species',{d:'both',s:'medium'}],
-  ['industrial waste water treatment||oxygen changes||changes to hydrological conditions',{d:'indirect',s:'weak'}],
-  ['industrial waste water treatment||riverine and coastal diffuse input of nutrients||input of nutrients',{d:'both',s:'strong'}],
-  ['industrial waste water treatment||salinity changes||changes to hydrological conditions',{d:'indirect',s:'strong'}],
-  ['industrial waste water treatment||siltation||physical disturbance',{d:'both',s:'medium'}],
+  ['industrial wastewater treatment||change in water temperature||input of other forms of energy',{d:'both',s:'medium'}],
+  ['industrial wastewater treatment||coastal and river input of hazardous substances||input of hazardous substances',{d:'both',s:'medium'}],
+  ['industrial wastewater treatment||input of climate change gases||input of hazardous substances',{d:'both',s:'medium'}],
+  ['industrial wastewater treatment||input of microbial pathogens||input or introduction of biological material',{d:'both',s:'strong'}],
+  ['industrial wastewater treatment||input of organic matter||input of organic matter',{d:'both',s:'strong'}],
+  ['industrial wastewater treatment||other changes to hydrological conditions||changes to hydrological conditions',{d:'both',s:'weak'}],
+  ['industrial wastewater treatment||other disturbance to species||disturbance of species',{d:'both',s:'medium'}],
+  ['industrial wastewater treatment||oxygen changes||changes to hydrological conditions',{d:'indirect',s:'weak'}],
+  ['industrial wastewater treatment||riverine and coastal diffuse input of nutrients||input of nutrients',{d:'both',s:'strong'}],
+  ['industrial wastewater treatment||salinity changes||changes to hydrological conditions',{d:'indirect',s:'strong'}],
+  ['industrial wastewater treatment||siltation||physical disturbance',{d:'both',s:'medium'}],
   ['land transport infrastructure||coastal and river input of hazardous substances||input of hazardous substances',{d:'indirect',s:'weak'}],
   ['land transport infrastructure||input of climate change gases||input of hazardous substances',{d:'indirect',s:'medium'}],
   ['large-scale water deviation||change of habitat location, size and/or quality||disturbance of species',{d:'direct',s:'weak'}],
@@ -2561,13 +2563,13 @@ let selectedPressures  = new Set();
   ['passage of ships/boats (passenger shipping; shipping density)||other forms of litter||input of litter',{d:'both',s:'strong'}],
   ['passage of ships/boats (passenger shipping; shipping density)||siltation||physical disturbance',{d:'both',s:'medium'}],
   ['passage of ships||input of light||input of other forms of energy',{d:'both',s:'weak'}],
-  ['pelagic long lining||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
-  ['pelagic long lining||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
-  ['pelagic long lining||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
-  ['pelagic long lining||intentional extraction or injury to species||extraction or injury to species',{d:'direct',s:'strong'}],
-  ['pelagic long lining||non-intentional extraction or injury to species (including bycatch)||extraction or injury to species',{d:'direct',s:'strong'}],
-  ['pelagic long lining||other disturbance to species||disturbance of species',{d:'direct',s:'strong'}],
-  ['pelagic long lining||other forms of litter||input of litter',{d:'both',s:'medium'}],
+  ['pelagic longlining||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
+  ['pelagic longlining||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
+  ['pelagic longlining||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
+  ['pelagic longlining||intentional extraction or injury to species||extraction or injury to species',{d:'direct',s:'strong'}],
+  ['pelagic longlining||non-intentional extraction or injury to species (including bycatch)||extraction or injury to species',{d:'direct',s:'strong'}],
+  ['pelagic longlining||other disturbance to species||disturbance of species',{d:'direct',s:'strong'}],
+  ['pelagic longlining||other forms of litter||input of litter',{d:'both',s:'medium'}],
   ['pelagic seining||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
   ['pelagic seining||input of climate change gases||input of hazardous substances',{d:'both',s:'weak'}],
   ['pelagic seining||input of organic matter||input of organic matter',{d:'both',s:'weak'}],
@@ -2711,17 +2713,17 @@ let selectedPressures  = new Set();
   ['urban land use (incl. storm water runoff)||other forms of litter||input of litter (solid waste matter, including micro-size litter)',{d:'indirect',s:'weak'}],
   ['urban land use (incl. storm water runoff)||riverine and coastal diffuse input of nutrients||input of nutrients',{d:'indirect',s:'medium'}],
   ['urban land use||input of light||input of other forms of energy',{d:'both',s:'strong'}],
-  ['urban waste water treatment||change in water temperature||input of other forms of energy',{d:'both',s:'medium'}],
-  ['urban waste water treatment||coastal and river input of hazardous substances||input of hazardous substances',{d:'both',s:'medium'}],
-  ['urban waste water treatment||input of climate change gases||input of hazardous substances',{d:'both',s:'medium'}],
-  ['urban waste water treatment||input of microbial pathogens||input or introduction of biological material',{d:'both',s:'strong'}],
-  ['urban waste water treatment||input of organic matter||input of organic matter',{d:'both',s:'strong'}],
-  ['urban waste water treatment||other changes to hydrological conditions||changes to hydrological conditions',{d:'both',s:'weak'}],
-  ['urban waste water treatment||other disturbance to species||disturbance of species',{d:'both',s:'medium'}],
-  ['urban waste water treatment||oxygen changes||changes to hydrological conditions',{d:'indirect',s:'weak'}],
-  ['urban waste water treatment||riverine and coastal diffuse input of nutrients||input of nutrients',{d:'both',s:'strong'}],
-  ['urban waste water treatment||salinity changes||changes to hydrological conditions',{d:'indirect',s:'strong'}],
-  ['urban waste water treatment||siltation||physical disturbance',{d:'both',s:'medium'}],
+  ['urban wastewater treatment||change in water temperature||input of other forms of energy',{d:'both',s:'medium'}],
+  ['urban wastewater treatment||coastal and river input of hazardous substances||input of hazardous substances',{d:'both',s:'medium'}],
+  ['urban wastewater treatment||input of climate change gases||input of hazardous substances',{d:'both',s:'medium'}],
+  ['urban wastewater treatment||input of microbial pathogens||input or introduction of biological material',{d:'both',s:'strong'}],
+  ['urban wastewater treatment||input of organic matter||input of organic matter',{d:'both',s:'strong'}],
+  ['urban wastewater treatment||other changes to hydrological conditions||changes to hydrological conditions',{d:'both',s:'weak'}],
+  ['urban wastewater treatment||other disturbance to species||disturbance of species',{d:'both',s:'medium'}],
+  ['urban wastewater treatment||oxygen changes||changes to hydrological conditions',{d:'indirect',s:'weak'}],
+  ['urban wastewater treatment||riverine and coastal diffuse input of nutrients||input of nutrients',{d:'both',s:'strong'}],
+  ['urban wastewater treatment||salinity changes||changes to hydrological conditions',{d:'indirect',s:'strong'}],
+  ['urban wastewater treatment||siltation||physical disturbance',{d:'both',s:'medium'}],
   ['waste disposal (munitions)||abrasion||physical disturbance',{d:'direct',s:'weak'}],
   ['waste disposal (munitions)||continuous underwater noise||input of sound',{d:'direct',s:'medium'}],
   ['waste disposal (munitions)||hazardous substances input at sea||input of hazardous substances',{d:'both',s:'weak'}],
@@ -2774,7 +2776,24 @@ let selectedPressures  = new Set();
   ['wind energy production: wind farms under construction||sealing||physical loss',{d:'direct',s:'strong'}],
   ['wind energy production: wind farms under construction||smothering||physical disturbance',{d:'direct',s:'strong'}],
 ]);
-  // Fallback lookup when the diagram's pressure Level-2 label differs from the dataset's Level-2 label.
+  
+
+// --- Alias merge: treat "Finfish mariculture (Aquaculture)" as "Finfish mariculture" for attribute lookups ---
+(function(){
+  const src = 'finfish mariculture (aquaculture)||';
+  const dst = 'finfish mariculture||';
+  const toAdd = [];
+  LINK_ATTR.forEach((v, k) => {
+    if (typeof k === 'string' && k.startsWith(src)) {
+      toAdd.push([dst + k.slice(src.length), v]);
+    }
+  });
+  for (const [k, v] of toAdd) {
+    if (!LINK_ATTR.has(k)) LINK_ATTR.set(k, v);
+  }
+})();
+
+// Fallback lookup when the diagram's pressure Level-2 label differs from the dataset's Level-2 label.
   // Keyed by: act3||pres3 (canonicalized). If multiple rows exist, we keep the "strongest" one.
   const LINK_ATTR_BY_A3P3 = (() => {
     const out = new Map();
